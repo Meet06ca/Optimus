@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimus Sovereign - Ultra Autonomous AI Ecosystem</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body {
+            background: linear-gradient(135deg, #030007, #0f031e, #030a17);
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        .master-container {
+            background: rgba(15, 3, 30, 0.92);
+            backdrop-filter: blur(35px);
+            border: 2px solid rgba(236, 72, 153, 0.4);
+            border-radius: 35px;
+            padding: 24px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.95);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Instagram-Style Feed Header & Stories */
+        .ig-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .ig-logo { font-size: 18px; font-weight: 800; background: linear-gradient(90deg, #ff007f, #7928ca); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stories-row { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px; margin-bottom: 15px; }
+        .story-ring {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: linear-gradient(45deg, #ff007f, #7928ca);
+            display: flex; justify-content: center; align-items: center;
+            flex-shrink: 0; cursor: pointer;
+        }
+        .story-inner { width: 44px; height: 44px; background: #0f031e; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 20px; }
+
+        /* Autonomous Anime / Neural Avatar Stage */
+        .anime-stage {
+            width: 100%; height: 150px;
+            background: linear-gradient(180deg, rgba(236,72,153,0.15), rgba(59,130,246,0.05));
+            border-radius: 20px; border: 1px solid rgba(236, 72, 153, 0.3);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            margin-bottom: 15px; position: relative; overflow: hidden;
+        }
+        .anime-avatar { font-size: 65px; animation: floatAnim 3s ease-in-out infinite; }
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        .status-badge { font-size: 11px; background: rgba(16,185,129,0.2); color: #34d399; padding: 3px 10px; border-radius: 10px; margin-top: 6px; border: 1px solid #10b981; }
+
+        /* Studio Grid (Photo, Video, Animation, YouTube) */
+        .studio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 15px; }
+        .studio-btn {
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px; padding: 10px; color: #fff; font-size: 11px; font-weight: 600;
+            cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 5px;
+        }
+        .studio-btn:hover { background: linear-gradient(90deg, #ff007f, #7928ca); border-color: #ff007f; }
+
+        /* Autonomous AI Terminal / Chat */
+        .terminal-box {
+            background: rgba(5, 1, 12, 0.95); border-radius: 14px; padding: 12px;
+            border: 1px solid rgba(236, 72, 153, 0.3); text-align: left; margin-bottom: 15px;
+        }
+        .terminal-screen { height: 90px; overflow-y: auto; font-size: 11px; font-family: monospace; color: #34d399; margin-bottom: 8px; display: flex; flex-direction: column; gap: 4px; }
+        .input-row { display: flex; gap: 6px; }
+        input {
+            width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid #475569;
+            background: #030007; color: white; outline: none; font-size: 12px;
+        }
+        input:focus { border-color: #ff007f; }
+        .btn {
+            background: linear-gradient(90deg, #ff007f, #7928ca); color: white; border: none;
+            padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold;
+        }
+
+        /* Master Sovereign Admin Section */
+        .admin-section { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px; text-align: left; }
+        .secret-panel { display: none; margin-top: 10px; background: rgba(5, 1, 12, 0.98); padding: 12px; border-radius: 12px; border: 1px solid #10b981; }
+    </style>
+</head>
+<body>
+
+    <div class="master-container">
+        <!-- IG Style Header & Stories -->
+        <div class="ig-header">
+            <div class="ig-logo">⚡ Optimus Omniverse</div>
+            <div style="font-size: 12px; color: #94a3b8;">Public Feed v5.0</div>
+        </div>
+        <div class="stories-row">
+            <div class="story-ring" onclick="triggerStory('Anime AI')"><div class="story-inner">✨</div></div>
+            <div class="story-ring" onclick="triggerStory('Photo Studio')"><div class="story-inner">🖼️</div></div>
+            <div class="story-ring" onclick="triggerStory('Video Maker')"><div class="story-inner">🎬</div></div>
+            <div class="story-ring" onclick="triggerStory('YouTube Bot')"><div class="story-inner">🎥</div></div>
+        </div>
+
+        <!-- Anime Companion Avatar Stage -->
+        <div class="anime-stage">
+            <div class="anime-avatar" id="avatarFace">🌸👩‍🎤</div>
+            <div class="status-badge" id="statusBadge">Autonomous Neural Core Active</div>
+        </div>
+
+        <!-- Studio Tools Grid -->
+        <div class="studio-grid">
+            <button class="studio-btn" onclick="runTool('AI Photo Editor')">🖼️ AI Photo Editor</button>
+            <button class="studio-btn" onclick="runTool('AI Video & Movie')">🎬 AI Video & Movie</button>
+            <button class="studio-btn" onclick="runTool('3D/2D Animation')">✨ 3D/2D Animation</button>
+            <button class="studio-btn" onclick="runTool('YouTube Creator')">🎥 YouTube Automation</button>
+        </div>
+
+        <!-- AI Terminal / Self-Evolution Box -->
+        <div class="terminal-box">
+            <div class="terminal-screen" id="terminalScreen">
+                <div>[SYSTEM]: Autonomous brain online. Zero expense mode.</div>
+                <div>[READY]: Type command to clone, edit or build feature...</div>
+            </div>
+            <div class="input-row">
+                <input type="text" id="aiInput" placeholder="Command AI (e.g. clone feature)..." onkeypress="handleKey(event)">
+                <button class="btn" onclick="executeAI()">Run</button>
+            </div>
+        </div>
+
+        <!-- Master Sovereign Admin Portal (Secured by 'jai mataji') -->
+        <div class="admin-section">
+            <label style="font-size: 10px; color: #ff007f; font-weight: bold;">MASTER SOVEREIGN OVERRIDE:</label>
+            <div style="display: flex; gap: 6px; margin-top: 4px;">
+                <input type="password" id="passkeyBox" placeholder="Enter passkey...">
+                <button class="btn" style="background: #10b981;" onclick="verifyMaster()">Unlock</button>
+            </div>
+            <div id="passMsg" style="font-size: 10px; margin-top: 3px;"></div>
+
+            <!-- Secret Master Portal (Hidden for Public) -->
+            <div id="masterPanel" class="secret-panel">
+                <p style="color: #34d399; font-weight: bold; font-size: 11px;">🔓 Master Sovereign Portal Unlocked!</p>
+                <p style="font-size: 10px; color: #cbd5e1; margin: 4px 0;">Full Control: Public user management, clone database & business transfer tools ready.</p>
+                <button class="btn" style="background: #6366f1; width: 100%; font-size: 11px; padding: 6px;" onclick="alert('Master Sovereign System: 100% Operational & Private.')">Run Master Diagnostic</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logTerm(text) {
+            const screen = document.getElementById('terminalScreen');
+            screen.innerHTML += `<div>> ${text}</div>`;
+            screen.scrollTop = screen.scrollHeight;
+        }
+
+        function triggerStory(name) {
+            logTerm(`Opening story vector: ${name}...`);
+            alert(`✨ ${name} Studio Stream Loaded!`);
+        }
+
+        function runTool(toolName) {
+            logTerm(`Executing ${toolName} engine...`);
+            setTimeout(() => {
+                logTerm(`✨ Success: ${toolName} deployed autonomously!`);
+                alert(`🚀 ${toolName} ready for action!`);
+            }, 600);
+        }
+
+        function executeAI() {
+            const input = document.getElementById('aiInput');
+            const val = input.value.trim();
+            if(val !== "") {
+                logTerm(`Command: "${val}"`);
+                input.value = "";
+                setTimeout(() => {
+                    logTerm(`✨ Optimus AI: Analyzed and self-coded feature '${val}' successfully!`);
+                }, 700);
+            }
+        }
+
+        function handleKey(e) {
+            if(e.key === 'Enter') executeAI();
+        }
+
+        function verifyMaster() {
+            const key = document.getElementById('passkeyBox').value.trim().toLowerCase();
+            const msg = document.getElementById('passMsg');
+            const panel = document.getElementById('masterPanel');
+
+            if(key === 'jai mataji') {
+                msg.style.color = '#34d399';
+                msg.innerHTML = '✨ Master Verified. Sovereign access granted.';
+                panel.style.display = 'block';
+            } else {
+                msg.style.color = '#f87171';
+                msg.innerHTML = '❌ Access Denied. Invalid passkey.';
+                panel.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
